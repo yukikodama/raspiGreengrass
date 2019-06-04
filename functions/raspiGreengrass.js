@@ -48,18 +48,4 @@ board.init();
 exports.handler = function (event, context, callback) {
     console.log('Received event:', JSON.stringify(event, null, 2));
     console.log('Received context:', JSON.stringify(context, null, 2));
-    callback(null, {
-        statusCode: '200',
-        body: JSON.stringify({
-            moisture: m,
-            temperature: t,
-            humidity: h,
-            platform: myPlatform,
-            message: "from Greengrass Core and NodeJS."
-        }),
-        headers: {
-            'Content-Type': 'application/json',
-            'Access-Control-Allow-Origin': '*'
-        },
-    });
 };

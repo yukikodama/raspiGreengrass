@@ -21,24 +21,27 @@ Globals:
     DeploymentPreference:
       Enabled: true
       Type: Canary10Percent5Minutes
+      #Type: AllAtOnce
       Role: !Ref CodeDeployRole
 
 Resources:
-  GetHelloWorld:
+  RaspiGreengrass:
     Type: AWS::Serverless::Function
     Properties:
-      Handler: index.get
+      Handler: functions/raspiGreengrass.handler
+      FunctionName: RaspiGreengrass
       Runtime: nodejs8.10
+      Description: '(yuki-kodama Lambda node.js) RaspiGreengrass Lambda in Node.js.'
+      MemorySize: 128
+      Timeout: 60
+      Environment:
+        Variables:
+          ALIASES: GrovePiLongInterval
       Role:
         Fn::GetAtt:
         - LambdaExecutionRole
         - Arn
-      Events:
-        GetEvent:
-          Type: Api
-          Properties:
-            Path: /
-            Method: get
+
   LambdaExecutionRole:
     Description: Creating service role in IAM for AWS Lambda
     Type: AWS::IAM::Role
