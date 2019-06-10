@@ -42,7 +42,6 @@ Resources:
           - LambdaExecutionRole
           - Arn
 
-Resources:
   RaspiGreengrass:
     Type: AWS::Serverless::Function
     Properties:
