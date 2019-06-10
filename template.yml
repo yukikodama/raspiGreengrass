@@ -25,6 +25,24 @@ Globals:
       Role: !Ref CodeDeployRole
 
 Resources:
+  HelloGreengrass:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: functions/helloGreengrass.handler
+      FunctionName: HelloGreengrass
+      Runtime: nodejs8.10
+      Description: '(yuki-kodama Lambda node.js) HelloGreengrass Lambda in Node.js.'
+      MemorySize: 128
+      Timeout: 60
+      Environment:
+        Variables:
+          ALIASES: HelloGreengrass
+      Role:
+        Fn::GetAtt:
+          - LambdaExecutionRole
+          - Arn
+
+Resources:
   RaspiGreengrass:
     Type: AWS::Serverless::Function
     Properties:
