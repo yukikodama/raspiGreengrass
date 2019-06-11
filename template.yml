@@ -28,7 +28,7 @@ Resources:
   HelloGreengrass:
     Type: AWS::Serverless::Function
     Properties:
-      Handler: functions/helloGreengrass.handler
+      Handler: index.handler
       FunctionName: HelloGreengrass
       Runtime: nodejs8.10
       Description: '(yuki-kodama Lambda node.js) HelloGreengrass Lambda in Node.js.'
