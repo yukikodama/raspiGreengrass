@@ -29,14 +29,14 @@ function greengrassHelloWorldRun() {
         ExpressionAttributeValues: {":d": 5000},
         ReturnValues: "UPDATED_NEW"
     };
-    // docClient.update(params, function (err, data) {
-    //     if (err) {
-    //         console.log(err);
-    //         console.error("Unable to update item. Error JSON:", JSON.stringify(err, null, 2));
-    //     } else {
-    //         console.log("UpdateItem succeeded:", JSON.stringify(data, null, 2));
-    //     }
-    // });
+    docClient.update(params, function (err, data) {
+         if (err) {
+             console.error(err);
+             console.error("Unable to update item. Error JSON:", JSON.stringify(err, null, 2));
+         } else {
+             console.log("UpdateItem succeeded:", JSON.stringify(data, null, 2));
+         }
+    });
     iotClient.publish(pubOpt, publishCallback);
 }
 
