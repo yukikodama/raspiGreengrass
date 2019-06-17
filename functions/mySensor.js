@@ -2,6 +2,8 @@
 
 const ggSdk = require('aws-greengrass-core-sdk');
 var aws = require('aws-sdk');
+var dynamodb = new aws.DynamoDB({region: 'us-east-1'});
+var docClient = dynamodb.DocumentClient();
 const iotClient = new ggSdk.IotData();
 const os = require('os');
 const util = require('util');
@@ -11,7 +13,6 @@ function publishCallback(err, data) {
     console.log(data);
 }
 
-
 const myPlatform = util.format('%s-%s', os.platform(), os.release());
 const pubOpt = {
     topic: 'topic/sensor',
@@ -19,6 +20,20 @@ const pubOpt = {
 };
 
 function greengrassHelloWorldRun() {
+    var params = {
+        TableName: "MySensor",
+        Key: {"id": "1"},
+        UpdateExpression: "set value = :v",
+        ExpressionAttributeValues: {"v": "test_value"},
+        ReturnValues:"UPDATED_NEW"
+    };
+    docClient.update(params, function(err, data) {
+        if (err) {
+            console.error("Unable to update item. Error JSON:", JSON.stringify(err, null, 2));
+        } else {
+            console.log("UpdateItem succeeded:", JSON.stringify(data, null, 2));
+        }
+    });
     iotClient.publish(pubOpt, publishCallback);
 }
 
