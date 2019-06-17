@@ -58,6 +58,22 @@ Resources:
         Fn::GetAtt:
         - LambdaExecutionRole
         - Arn
+  MySensor:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: mySensor.handler
+      FunctionName: MySensor
+      Runtime: nodejs8.10
+      Description: '(yuki-kodama Lambda node.js) HelloGreengrass Lambda in Node.js.'
+      MemorySize: 128
+      Timeout: 60
+      Environment:
+        Variables:
+          ALIASES: MySensor
+      Role:
+        Fn::GetAtt:
+          - LambdaExecutionRole
+          - Arn
 
   LambdaExecutionRole:
     Description: Creating service role in IAM for AWS Lambda
@@ -73,4 +89,5 @@ Resources:
       Path: /
       ManagedPolicyArns:
         -  arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
+        -  arn:aws:iam::aws:policy/AmazonDynamoDBFullAccess
       PermissionsBoundary: !Sub 'arn:${AWS::Partition}:iam::${AWS::AccountId}:policy/CodeStar_${ProjectId}_PermissionsBoundary'
