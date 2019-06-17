@@ -22,8 +22,8 @@ function greengrassHelloWorldRun() {
     var params = {
         TableName: "MySensor",
         Key: {"id": "1"},
-        UpdateExpression: "set value = :v",
-        ExpressionAttributeValues: {"v": "test_value"},
+        UpdateExpression: "set pir = :p",
+        ExpressionAttributeValues: {":p": "test_value_xx"},
         ReturnValues:"UPDATED_NEW"
     };
     docClient.update(params, function(err, data) {
