@@ -6,7 +6,7 @@ const docClient = new aws.DynamoDB.DocumentClient({region: "us-east-1"});
 const iotClient = new ggSdk.IotData();
 const os = require('os');
 const util = require('util');
-const ip = os.networkInterfaces().eth0[0].address;
+const ip = "192.168.1.1"; //os.networkInterfaces().eth0[0].address;
 
 function publishCallback(err, data) {
     console.log(err);
@@ -20,11 +20,13 @@ const pubOpt = {
 };
 
 function greengrassHelloWorldRun() {
+    var interfaces = os.networkInterfaces();
+    console.log(interfaces);
     var params = {
         TableName: "MySensor",
-        Key: {"id": "1"},
-        UpdateExpression: "set pir = :p, sensor = :s",
-        ExpressionAttributeValues: {":p": "test_value_xx", ":s": "sensor"},
+        Key: {"ip": ip, "sensor" : "D2"},
+        UpdateExpression: "set during = during + :d",
+        ExpressionAttributeValues: {":d": 5000},
         ReturnValues: "UPDATED_NEW"
     };
     // docClient.update(params, function (err, data) {

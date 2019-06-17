@@ -31,11 +31,19 @@ Resources:
       TableName: MySensor
       BillingMode: PAY_PER_REQUEST
       AttributeDefinitions:
-        - AttributeName: id
+        -
+          AttributeName: ip
+          AttributeType: S
+        -
+          AttributeName: sensor
           AttributeType: S
       KeySchema:
-        - AttributeName: id
+        -
+          AttributeName: ip
           KeyType: HASH
+        -
+          AttributeName: sensor
+          KeyType: RANGE
       StreamSpecification:
         StreamViewType: NEW_IMAGE
 
