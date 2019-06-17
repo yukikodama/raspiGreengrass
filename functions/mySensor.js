@@ -1,9 +1,8 @@
 'use strict';
 
 const ggSdk = require('aws-greengrass-core-sdk');
-var aws = require('aws-sdk');
-var dynamodb = new aws.DynamoDB({region: 'us-east-1'});
-var docClient = dynamodb.DocumentClient();
+const aws = require('aws-sdk');
+const docClient = new aws.DynamoDB.DocumentClient({region: "us-east-1"});
 const iotClient = new ggSdk.IotData();
 const os = require('os');
 const util = require('util');
