@@ -107,4 +107,6 @@ Resources:
       ManagedPolicyArns:
         -  arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
         -  arn:aws:iam::aws:policy/AmazonDynamoDBFullAccess
+        -  arn:aws:iam::aws:policy/AWSGreengrassFullAccess
+        -  arn:aws:iam::aws:policy/service-role/AWSGreengrassResourceAccessRolePolicy
       PermissionsBoundary: !Sub 'arn:${AWS::Partition}:iam::${AWS::AccountId}:policy/CodeStar_${ProjectId}_PermissionsBoundary'
