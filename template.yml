@@ -43,6 +43,7 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       Handler: index.handler
+      AutoPublishAlias: HelloGreengrass
       FunctionName: HelloGreengrass
       Runtime: nodejs8.10
       Description: '(yuki-kodama Lambda node.js) HelloGreengrass Lambda in Node.js.'
@@ -60,6 +61,7 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       Handler: functions/raspiGreengrass.handler
+      AutoPublishAlias: GrovePiLongInterval
       FunctionName: RaspiGreengrass
       Runtime: nodejs8.10
       Description: '(yuki-kodama Lambda node.js) RaspiGreengrass Lambda in Node.js.'
@@ -76,6 +78,7 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       Handler: functions/mySensor.handler
+      AutoPublishAlias: MySensor
       FunctionName: MySensor
       Runtime: nodejs8.10
       Description: '(yuki-kodama Lambda node.js) MySensor Lambda in Node.js.'
