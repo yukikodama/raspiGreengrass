@@ -28,6 +28,7 @@ function greengrassHelloWorldRun() {
     };
     docClient.update(params, function(err, data) {
         if (err) {
+            console.log(err);
             console.error("Unable to update item. Error JSON:", JSON.stringify(err, null, 2));
         } else {
             console.log("UpdateItem succeeded:", JSON.stringify(data, null, 2));
