@@ -31,8 +31,7 @@ Resources:
       TableName: MySensor
       BillingMode: PROVISIONED
       AttributeDefinitions:
-        -
-          AttributeName: id
+        - AttributeName: id
           AttributeType: S
       KeySchema:
         - AttributeName: id
