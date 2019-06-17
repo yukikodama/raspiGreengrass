@@ -20,7 +20,7 @@ const pubOpt = {
 };
 
 function greengrassHelloWorldRun() {
-    console.log(os);
+    console.log('networkInterfaces: ', JSON.stringify(os.networkInterfaces()));
     var params = {
         TableName: "MySensor",
         Key: {"ip": ip, "sensor" : "D2"},
