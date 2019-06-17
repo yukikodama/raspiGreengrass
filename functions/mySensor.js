@@ -1,7 +1,7 @@
 'use strict';
 
 const ggSdk = require('aws-greengrass-core-sdk');
-
+var aws = require('aws-sdk');
 const iotClient = new ggSdk.IotData();
 const os = require('os');
 const util = require('util');
