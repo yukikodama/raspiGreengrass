@@ -6,7 +6,8 @@ const docClient = new aws.DynamoDB.DocumentClient({region: "us-east-1"});
 const iotClient = new ggSdk.IotData();
 const os = require('os');
 const util = require('util');
-const ip = "192.168.1.1"; //os.networkInterfaces().eth0[0].address;
+const fs  = require('fs');
+const ip = "192.168.1.1";
 
 function publishCallback(err, data) {
     console.log(err);
@@ -20,7 +21,12 @@ const pubOpt = {
 };
 
 function greengrassHelloWorldRun() {
-    console.log('networkInterfaces: ', JSON.stringify(os.networkInterfaces()));
+    var address = '';
+    fs.readFileSync('/sys/devices/platform/soc/3f980000.usb/usb1/1-1/1-1.1/1-1.1.1/1-1.1.1:1.0/net/eth0/address', 'utf8', function(err, text) {
+        address = text.toString().trim();
+        console.log('address: ', address);
+    });
+
     var params = {
         TableName: "MySensor",
         Key: {"ip": ip, "sensor" : "D2"},
