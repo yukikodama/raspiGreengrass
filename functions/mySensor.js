@@ -6,8 +6,8 @@ const docClient = new aws.DynamoDB.DocumentClient({region: "us-east-1"});
 const iotClient = new ggSdk.IotData();
 const os = require('os');
 const util = require('util');
-const fs  = require('fs');
-const ip = "192.168.1.1";
+const uuid = require('node-uuid');
+const id = uuid.v4().split('-').join('');
 
 function publishCallback(err, data) {
     console.log(err);
@@ -17,7 +17,7 @@ function publishCallback(err, data) {
 const myPlatform = util.format('%s-%s', os.platform(), os.release());
 const pubOpt = {
     topic: 'topic/sensor',
-    payload: JSON.stringify({message: util.format('Hello world! Sent from Greengrass Core running on platform: %s using NodeJS, IP: %s', myPlatform, ip)}),
+    payload: JSON.stringify({message: util.format('Hello world! Sent from Greengrass Core running on platform: %s using NodeJS, ID: %s', myPlatform, id)}),
 };
 
 function greengrassHelloWorldRun() {
@@ -25,19 +25,19 @@ function greengrassHelloWorldRun() {
     console.log("networkInterfaces:", irf);
     var params = {
         TableName: "MySensor",
-        Key: {"ip": ip, "sensor" : "D2"},
+        Key: {"id": id, "sensor" : "D2"},
         UpdateExpression: "set during = during + :d",
         ExpressionAttributeValues: {":d": 5000},
         ReturnValues: "UPDATED_NEW"
     };
-    // docClient.update(params, function (err, data) {
-    //      if (err) {
-    //          console.error(err);
-    //          console.error("Unable to update item. Error JSON:", JSON.stringify(err, null, 2));
-    //      } else {
-    //          console.log("UpdateItem succeeded:", JSON.stringify(data, null, 2));
-    //      }
-    // });
+    docClient.update(params, function (err, data) {
+         if (err) {
+             console.error(err);
+             console.error("Unable to update item. Error JSON:", JSON.stringify(err, null, 2));
+         } else {
+             console.log("UpdateItem succeeded:", JSON.stringify(data, null, 2));
+         }
+    });
     iotClient.publish(pubOpt, publishCallback);
 }
 
