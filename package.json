@@ -5,6 +5,7 @@
     "private": true,
     "devDependencies": {
         "aws-sdk": "latest",
+        "node-uuid": "latest",
         "node-grovepi": "2.2.2",
         "mocha": "5.0.0",
         "unit.js": "2.0.0"
