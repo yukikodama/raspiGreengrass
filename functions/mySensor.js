@@ -21,12 +21,10 @@ const pubOpt = {
 };
 
 function greengrassHelloWorldRun() {
-    var address = '';
-    fs.readFileSync('/sys/devices/platform/soc/3f980000.usb/usb1/1-1/1-1.1/1-1.1.1/1-1.1.1:1.0/net/eth0/address', 'utf8', function(err, text) {
-        address = text.toString().trim();
-        console.log('address: ', address);
+    var address = fs.readFileSync('/sys/devices/platform/soc/3f980000.usb/usb1/1-1/1-1.1/1-1.1.1/1-1.1.1:1.0/net/eth0/address', 'utf8', function(err, text) {
+        return text.toString().trim();
     });
-
+    console.log("address: ", address);
     var params = {
         TableName: "MySensor",
         Key: {"ip": ip, "sensor" : "D2"},
