@@ -22,7 +22,7 @@ const pubOpt = {
 
 const countup = {
     TableName: "MySensor",
-    Key: {"id": id, "sensor" : "D2"},
+    Key: {"id": id, "sensor": "D2"},
     UpdateExpression: "set during = during + :d",
     ExpressionAttributeValues: {":d": 5000},
     ReturnValues: "UPDATED_NEW"
@@ -30,37 +30,37 @@ const countup = {
 
 const reset = {
     TableName: "MySensor",
-    Key: {"id": id, "sensor" : "D2"},
+    Key: {"id": id, "sensor": "D2"},
     UpdateExpression: "set during = :d",
     ExpressionAttributeValues: {":d": 0},
     ReturnValues: "UPDATED_NEW"
 };
 
 function greengrassHelloWorldRun() {
-    const params  = {
+    const params = {
         TableName: "MySensor",
-        Key: {"id": id, "sensor" : "D2"}
+        Key: {"id": id, "sensor": "D2"}
     };
-    docClient.get(params, function(err, data) {
-       if (err) {
-           docClient.put(reset, function(err, data) {
-               if (err) {
-                   console.error(err);
-                   console.error("Unable to Put item. Error JSON:", JSON.stringify(err, null, 2));
-               } else {
-                   console.log("Put Item succeeded:", JSON.stringify(data, null, 2));
-               }
-           });
-       } else {
-           docClient.update(countup, function (err, data) {
-               if (err) {
-                   console.error(err);
-                   console.error("Unable to update item. Error JSON:", JSON.stringify(err, null, 2));
-               } else {
-                   console.log("UpdateItem succeeded:", JSON.stringify(data, null, 2));
-               }
-           });
-       }
+    docClient.get(params, function (err, data) {
+        if (Object.keys(data).length) {
+            docClient.update(countup, function (err, data) {
+                if (err) {
+                    console.error(err);
+                    console.error("Unable to update item. Error JSON:", JSON.stringify(err, null, 2));
+                } else {
+                    console.log("UpdateItem succeeded:", JSON.stringify(data, null, 2));
+                }
+            });
+        } else {
+            docClient.put(reset, function (err, data) {
+                if (err) {
+                    console.error(err);
+                    console.error("Unable to Put item. Error JSON:", JSON.stringify(err, null, 2));
+                } else {
+                    console.log("Put Item succeeded:", JSON.stringify(data, null, 2));
+                }
+            });
+        }
     });
     iotClient.publish(pubOpt, publishCallback);
 }
