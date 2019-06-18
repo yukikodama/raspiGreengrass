@@ -21,10 +21,8 @@ const pubOpt = {
 };
 
 function greengrassHelloWorldRun() {
-    var address = fs.readFileSync('/sys/devices/platform/soc/3f980000.usb/usb1/1-1/1-1.1/1-1.1.1/1-1.1.1:1.0/net/eth0/address', 'utf8', function(err, text) {
-        return text.toString().trim();
-    });
-    console.log("address: ", address);
+    const irf = os.networkInterfaces();
+    console.log("networkInterfaces:", irf);
     var params = {
         TableName: "MySensor",
         Key: {"ip": ip, "sensor" : "D2"},
@@ -48,6 +46,6 @@ setInterval(greengrassHelloWorldRun, 5000);
 
 // This is a handler which does nothing for this example
 exports.handler = function handler(event, context) {
-    console.log(event);
-    console.log(context);
+    console.log("event: ", event);
+    console.log("context:", context);
 };
