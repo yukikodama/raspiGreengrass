@@ -41,7 +41,7 @@ function greengrassHelloWorldRun() {
         TableName: "MySensor",
         Key: {"id": id, "sensor" : "D2"}
     };
-    docClient.get(parms, function(err, data) {
+    docClient.get(params, function(err, data) {
        if (err) {
            docClient.put(reset, function(err, data) {
                if (err) {
