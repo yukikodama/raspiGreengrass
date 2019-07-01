@@ -19,7 +19,7 @@ function publishCallback(err, data) {
 
 const myPlatform = util.format('%s-%s', os.platform(), os.release());
 
-const board = new GrovePi.board({
+const board = new grovePi.board({
     debug: true,
     onError: function (err) {
         console.log(err);
@@ -31,7 +31,7 @@ const board = new GrovePi.board({
             // const pir = Number(d3.read());
             const pubOpt = {
                 topic: 'topic/sensor',
-                payload: JSON.stringify({message: util.format('Sent from Greengrass Core running on platform: %s using NodeJS, Id: %s, createTime: %s, now: %s, pir: %s', myPlatform, id, createTime, now, "pir")}),
+                payload: JSON.stringify({message: util.format('Sent from Greengrass Core running on platform: %s using NodeJS, Id: %s, createTime: %s, now: %s, pir: %s', myPlatform, id, createTime, now, "pir")})
             };
             iotClient.publish(pubOpt, publishCallback);
         }, 5000);
