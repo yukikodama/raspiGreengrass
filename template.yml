@@ -33,8 +33,8 @@ Resources:
       AttributeDefinitions:
         - AttributeName: id
           AttributeType: S
-        - AttributeName: sensor
-          AttributeType: S
+        - AttributeName: create_time
+          AttributeType: N
       KeySchema:
         - AttributeName: id
           KeyType: HASH
