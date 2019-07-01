@@ -36,7 +36,7 @@ Resources:
         - AttributeName: "Sensor"
           AttributeType: "S"
         - AttributeName: "CreateTime"
-          AttributeType: "N"
+          AttributeType: "S"
       KeySchema:
         - AttributeName: "Id"
           KeyType: "HASH"
