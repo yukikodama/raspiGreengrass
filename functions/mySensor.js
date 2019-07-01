@@ -27,11 +27,11 @@ const board = new GrovePi.board({
     onInit: function (res) {
         setInterval(function () {
             const now = new Date().getTime();
-            const d3  = new grovePi.sensors.DigitalOutput(3);
-            const pir = Number(d3.read());
+            // const d3  = new grovePi.sensors.DigitalOutput(3);
+            // const pir = Number(d3.read());
             const pubOpt = {
                 topic: 'topic/sensor',
-                payload: JSON.stringify({message: util.format('Sent from Greengrass Core running on platform: %s using NodeJS, Id: %s, createTime: %s, now: %s, pir: %s', myPlatform, id, createTime, now, pir)}),
+                payload: JSON.stringify({message: util.format('Sent from Greengrass Core running on platform: %s using NodeJS, Id: %s, createTime: %s, now: %s, pir: %s', myPlatform, id, createTime, now, "pir")}),
             };
             iotClient.publish(pubOpt, publishCallback);
         }, 5000);
