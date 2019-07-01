@@ -8,7 +8,6 @@ const os = require('os');
 const util = require('util');
 const uuid = require('node-uuid');
 const grovePi = require('node-grovepi').GrovePi;
-const d3  = new grovePi.sensors.DigitalOutput(3);
 
 const id = uuid.v4().split('-').join('');
 var createTime = new Date().getTime();
@@ -20,22 +19,26 @@ function publishCallback(err, data) {
 
 const myPlatform = util.format('%s-%s', os.platform(), os.release());
 
-function greengrassHelloWorldRun() {
-    const now = new Date().getTime();
-    console.log("id:", id);
-    console.log("createTime:", createTime);
-    console.log("now: ", now);
-    const pubOpt = {
-        topic: 'topic/sensor',
-        payload: JSON.stringify({message: util.format('Sent from Greengrass Core running on platform: %s using NodeJS, ID: %s, createTime: %s, now: %s', myPlatform, id, createTime, now)}),
-    };
-    iotClient.publish(pubOpt, publishCallback);
-}
+const board = new GrovePi.board({
+    debug: true,
+    onError: function (err) {
+        console.log(err);
+    },
+    onInit: function (res) {
+        setInterval(function () {
+            const now = new Date().getTime();
+            const d3  = new grovePi.sensors.DigitalOutput(3);
+            const pir = Number(d3.read());
+            const pubOpt = {
+                topic: 'topic/sensor',
+                payload: JSON.stringify({message: util.format('Sent from Greengrass Core running on platform: %s using NodeJS, Id: %s, createTime: %s, now: %s, pir: %s', myPlatform, id, createTime, now, pir)}),
+            };
+            iotClient.publish(pubOpt, publishCallback);
+        }, 5000);
+    }
+});
+board.init();
 
-// Schedule the job to run every 5 seconds
-setInterval(greengrassHelloWorldRun, 5000);
-
-// This is a handler which does nothing for this example
 exports.handler = function handler(event, context) {
     console.log("event: ", event);
     console.log("context:", context);
