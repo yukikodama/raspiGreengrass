@@ -33,12 +33,12 @@ Resources:
       AttributeDefinitions:
         - AttributeName: "Id"
           AttributeType: "S"
-        - AttributeName: "CreateTime"
+        - AttributeName: "Sensor"
           AttributeType: "S"
       KeySchema:
         - AttributeName: "Id"
           KeyType: "HASH"
-        - AttributeName: "CreateTime"
+        - AttributeName: "Sensor"
           KeyType: "RANGE"
       StreamSpecification:
         StreamViewType: NEW_IMAGE
