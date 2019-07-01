@@ -38,7 +38,7 @@ Resources:
       KeySchema:
         - AttributeName: id
           KeyType: HASH
-        - AttributeName: sensor
+        - AttributeName: create_time
           KeyType: RANGE
       StreamSpecification:
         StreamViewType: NEW_IMAGE

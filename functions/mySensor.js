@@ -7,7 +7,11 @@ const iotClient = new ggSdk.IotData();
 const os = require('os');
 const util = require('util');
 const uuid = require('node-uuid');
+const grovePi = require('node-grovepi').GrovePi;
+const d3  = new grovePi.sensors.DigitalOutput(3);
+
 const id = uuid.v4().split('-').join('');
+var create_time = new Date().getTime();
 
 function publishCallback(err, data) {
     console.log(err);
@@ -20,38 +24,28 @@ const pubOpt = {
     payload: JSON.stringify({message: util.format('Hello world! Sent from Greengrass Core running on platform: %s using NodeJS, ID: %s', myPlatform, id)}),
 };
 
-const countup = {
-    TableName: "MySensor",
-    Key: {"id": id, "sensor": "D2"},
-    UpdateExpression: "set during = during + :d",
-    ExpressionAttributeValues: {":d": 5000},
-    ReturnValues: "UPDATED_NEW"
-};
-
-const reset = {
-    TableName: "MySensor",
-    Key: {"id": id, "sensor": "D2"},
-    UpdateExpression: "set during = :d",
-    ExpressionAttributeValues: {":d": 0},
-    ReturnValues: "UPDATED_NEW"
-};
-
 function greengrassHelloWorldRun() {
-    const params = {
+    const now = new Date().getTime();
+    const pir = Number(d3.read());
+    console.log("pir: ", pir);
+    const countup = {
         TableName: "MySensor",
-        Key: {"id": id, "sensor": "D2"}
+        Key: {"id": id, "create_time": create_time},
+        UpdateExpression: "set during = during + :d, update_time = :t",
+        ExpressionAttributeValues: {":d": 5000, ":t": now},
+        ReturnValues: "UPDATED_NEW"
     };
-    docClient.get(params, function (err, data) {
-        if (Object.keys(data).length) {
-            docClient.update(countup, function (err, data) {
-                if (err) {
-                    console.error(err);
-                    console.error("Unable to update item. Error JSON:", JSON.stringify(err, null, 2));
-                } else {
-                    console.log("UpdateItem succeeded:", JSON.stringify(data, null, 2));
-                }
-            });
-        } else {
+
+    docClient.update(countup, function (err, data) {
+        if (err) {
+            console.error(err);
+            const reset = {
+                TableName: "MySensor",
+                Key: {"id": id, "create_time": now},
+                UpdateExpression: "set during = :d, update_time = :t",
+                ExpressionAttributeValues: {":d": 0, ":t": now},
+                ReturnValues: "UPDATED_NEW"
+            };
             docClient.put(reset, function (err, data) {
                 if (err) {
                     console.error(err);
@@ -60,6 +54,9 @@ function greengrassHelloWorldRun() {
                     console.log("Put Item succeeded:", JSON.stringify(data, null, 2));
                 }
             });
+            create_time = now;
+        } else {
+            console.log("UpdateItem succeeded:", JSON.stringify(data, null, 2));
         }
     });
     iotClient.publish(pubOpt, publishCallback);
