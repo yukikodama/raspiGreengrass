@@ -33,16 +33,24 @@ Resources:
       AttributeDefinitions:
         - AttributeName: Id
           AttributeType: S
+        - AttributeName: Sensor
+          AttributeType: S
         - AttributeName: CreateTime
           AttributeType: N
       KeySchema:
         - AttributeName: Id
           KeyType: HASH
-        - AttributeName: CreateTime
+        - AttributeName: Sensor
           KeyType: RANGE
       StreamSpecification:
         StreamViewType: NEW_IMAGE
-
+      LocalSecondaryIndexes:
+        - IndexName: MyLocalnIdex
+          KeySchema:
+            - AttributeName: CreateTime
+              KeyType: HASH
+          Projection:
+            ProjectionType: ALL
   HelloGreengrass:
     Type: AWS::Serverless::Function
     Properties:
