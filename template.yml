@@ -33,25 +33,13 @@ Resources:
       AttributeDefinitions:
         - AttributeName: "Id"
           AttributeType: "S"
-        - AttributeName: "Sensor"
-          AttributeType: "S"
         - AttributeName: "CreateTime"
           AttributeType: "S"
       KeySchema:
         - AttributeName: "Id"
           KeyType: "HASH"
-        - AttributeName: "Sensor"
+        - AttributeName: "CreateTime"
           KeyType: "RANGE"
-      LocalSecondaryIndexes:
-        -
-          IndexName: "myLocalSecondaryIndexes"
-          KeySchema:
-            - AttributeName: "Id"
-              KeyType: "HASH"
-            - AttributeName: "CreateTime"
-              KeyType: "RANGE"
-          Projection:
-            ProjectionType: "ALL"
       StreamSpecification:
         StreamViewType: NEW_IMAGE
 
