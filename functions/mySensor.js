@@ -8,7 +8,7 @@ const os = require('os');
 const util = require('util');
 const uuid = require('node-uuid');
 const grovePi = require('node-grovepi').GrovePi;
-const digital = GrovePi.sensors.base.Digital;
+const digital = grovePi.sensors.base.Digital;
 
 const id = uuid.v4().split('-').join('');
 var createTime = new Date().getTime();
