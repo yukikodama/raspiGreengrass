@@ -35,14 +35,14 @@ Resources:
           AttributeName: Id
           AttributeType: S
         -
-          AttributeName: CreateTime
-          AttributeType: N
+          AttributeName: Serial
+          AttributeType: S
       KeySchema:
         -
           AttributeName: Id
           KeyType: HASH
         -
-          AttributeName: CreateTime
+          AttributeName: Serial
           KeyType: RANGE
       StreamSpecification:
         StreamViewType: NEW_IMAGE

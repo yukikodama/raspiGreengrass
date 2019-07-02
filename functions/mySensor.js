@@ -27,14 +27,13 @@ const board = new grovePi.board({
         console.log(err);
     },
     onInit: function (res) {
-
         const dPir = new digital(3);
         setInterval(function () {
             const now = new Date().getTime();
-            const pir = Number(dPir.read());
+            var pir = Number(dPir.read());
             const reset = {
                 TableName: "MyPirSensor",
-                Key: {"Id": id, "CreateTime": createTime},
+                Key: {"Id": id, "Serial": serial},
                 UpdateExpression: "set During = :d",
                 ExpressionAttributeValues: {":d": 0},
                 ReturnValues: "UPDATED_NEW"
@@ -42,7 +41,7 @@ const board = new grovePi.board({
             if (pir) {
                 const countup = {
                     TableName: "MyPirSensor",
-                    Key: {"Id": id, "CreateTime": createTime},
+                    Key: {"Id": id, "Serial": serial},
                     UpdateExpression: "set During = During + :d",
                     ExpressionAttributeValues: {":d": 5000},
                     ReturnValues: "UPDATED_NEW"
@@ -51,7 +50,7 @@ const board = new grovePi.board({
                 docClient.put(reset, function (err, data) {
                     if (err) {
                         console.error(err);
-                        console.error(reset);
+                        console.error("reset: ", JSON.stringify(data, null, 2));
                         console.error("Unable to Put item. Error JSON:", JSON.stringify(err, null, 2));
                     } else {
                         console.log("Put Item succeeded:", JSON.stringify(data, null, 2));
