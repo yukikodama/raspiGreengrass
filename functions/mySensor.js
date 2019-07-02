@@ -32,16 +32,16 @@ const board = new grovePi.board({
             const now = new Date().getTime();
             var pir = Number(dPir.read());
             const reset = {
-                TableName: "MyPirSensor",
-                Key: {"Id": id, "Serial": serial},
+                TableName: "MySensor",
+                Key: {"Id": id, "Sensor": serial},
                 UpdateExpression: "set During = :d",
                 ExpressionAttributeValues: {":d": 0},
                 ReturnValues: "UPDATED_NEW"
             };
             if (pir) {
                 const countup = {
-                    TableName: "MyPirSensor",
-                    Key: {"Id": id, "Serial": serial},
+                    TableName: "MySensor",
+                    Key: {"Id": id, "Sensor": serial},
                     UpdateExpression: "set During = During + :d",
                     ExpressionAttributeValues: {":d": 5000},
                     ReturnValues: "UPDATED_NEW"
