@@ -8,6 +8,7 @@ const os = require('os');
 const util = require('util');
 const uuid = require('node-uuid');
 const grovePi = require('node-grovepi').GrovePi;
+const digital = GrovePi.sensors.base.Digital;
 
 const id = uuid.v4().split('-').join('');
 var createTime = new Date().getTime();
@@ -25,13 +26,13 @@ const board = new grovePi.board({
         console.log(err);
     },
     onInit: function (res) {
+        const dPir = new digital(3);
         setInterval(function () {
             const now = new Date().getTime();
-            // const d3  = new grovePi.sensors.DigitalOutput(3);
-            // const pir = Number(d3.read());
+            const pir = Number(dPir.read());
             const pubOpt = {
                 topic: 'topic/sensor',
-                payload: JSON.stringify({message: util.format('Sent from Greengrass Core running on platform: %s using NodeJS, Id: %s, createTime: %s, now: %s, pir: %s', myPlatform, id, createTime, now, "pir")})
+                payload: JSON.stringify({message: util.format('Sent from Greengrass Core running on platform: %s using NodeJS, Id: %s, createTime: %s, now: %s, pir: %s', myPlatform, id, createTime, now, pir)})
             };
             iotClient.publish(pubOpt, publishCallback);
         }, 5000);
