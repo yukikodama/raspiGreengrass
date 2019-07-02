@@ -9,8 +9,9 @@ const util = require('util');
 const uuid = require('node-uuid');
 const grovePi = require('node-grovepi').GrovePi;
 const digital = grovePi.sensors.base.Digital;
-
 const id = uuid.v4().split('-').join('');
+const serial = require('proc-cpuinfo')()["Serial"][0];
+
 var createTime = new Date().getTime();
 
 function publishCallback(err, data) {
@@ -34,22 +35,23 @@ const board = new grovePi.board({
             const reset = {
                 TableName: "MyPirSensor",
                 Key: {"Id": id, "CreateTime": createTime},
-                UpdateExpression: "set During = :d, UpdateTime = :t",
-                ExpressionAttributeValues: {":d": 0, ":t": now},
+                UpdateExpression: "set During = :d",
+                ExpressionAttributeValues: {":d": 0},
                 ReturnValues: "UPDATED_NEW"
             };
             if (pir) {
                 const countup = {
                     TableName: "MyPirSensor",
                     Key: {"Id": id, "CreateTime": createTime},
-                    UpdateExpression: "set During = During + :d, UpdateTime = :t",
-                    ExpressionAttributeValues: {":d": 5000, ":t": now},
+                    UpdateExpression: "set During = During + :d",
+                    ExpressionAttributeValues: {":d": 5000},
                     ReturnValues: "UPDATED_NEW"
                 };
             } else {
                 docClient.put(reset, function (err, data) {
                     if (err) {
                         console.error(err);
+                        console.error(reset);
                         console.error("Unable to Put item. Error JSON:", JSON.stringify(err, null, 2));
                     } else {
                         console.log("Put Item succeeded:", JSON.stringify(data, null, 2));
@@ -58,7 +60,7 @@ const board = new grovePi.board({
             }
             const pubOpt = {
                 topic: 'topic/sensor',
-                payload: JSON.stringify({message: util.format('Sent from Greengrass Core running on platform: %s using NodeJS, Id: %s, createTime: %s, now: %s, pir: %s', myPlatform, id, createTime, now, pir)})
+                payload: JSON.stringify({message: util.format('Sent from Greengrass Core running on platform: %s using NodeJS, Id: %s, serial: %s, createTime: %s, now: %s, pir: %s', myPlatform, id, serial, createTime, now, pir)})
             };
             iotClient.publish(pubOpt, publishCallback);
         }, 5000);
