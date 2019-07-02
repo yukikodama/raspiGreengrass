@@ -26,10 +26,36 @@ const board = new grovePi.board({
         console.log(err);
     },
     onInit: function (res) {
+
         const dPir = new digital(3);
         setInterval(function () {
             const now = new Date().getTime();
             const pir = Number(dPir.read());
+            const reset = {
+                TableName: "MyPirSensor",
+                Key: {"Id": id, "CreateTime": createTime},
+                UpdateExpression: "set During = :d, UpdateTime = :t",
+                ExpressionAttributeValues: {":d": 0, ":t": now},
+                ReturnValues: "UPDATED_NEW"
+            };
+            if (pir) {
+                const countup = {
+                    TableName: "MyPirSensor",
+                    Key: {"Id": id, "CreateTime": createTime},
+                    UpdateExpression: "set During = During + :d, UpdateTime = :t",
+                    ExpressionAttributeValues: {":d": 5000, ":t": now},
+                    ReturnValues: "UPDATED_NEW"
+                };
+            } else {
+                docClient.put(reset, function (err, data) {
+                    if (err) {
+                        console.error(err);
+                        console.error("Unable to Put item. Error JSON:", JSON.stringify(err, null, 2));
+                    } else {
+                        console.log("Put Item succeeded:", JSON.stringify(data, null, 2));
+                    }
+                });
+            }
             const pubOpt = {
                 topic: 'topic/sensor',
                 payload: JSON.stringify({message: util.format('Sent from Greengrass Core running on platform: %s using NodeJS, Id: %s, createTime: %s, now: %s, pir: %s', myPlatform, id, createTime, now, pir)})
