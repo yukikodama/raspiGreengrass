@@ -35,14 +35,23 @@ const board = new grovePi.board({
         setInterval(function () {
             const now = new Date().getTime();
             var pir = Number(dPir.read());
-            docClient.get(params, function(err, data) {
-                if (err) {
-                    console.error("Unable to read item. Error JSON:", JSON.stringify(err, null, 2));
-                } else {
-                    console.log("GetItem succeeded:", JSON.stringify(data, null, 2));
-                }
-            });
             const message = {Id :id, Sensor: serial, During : 0, Pir: pir, CreateTIme: createTime, UpdateTime: now};
+            if (pir) {
+
+            } else {
+                const v = {
+                    TableName: "MySensor",
+                    Item: message
+                };
+                docClient.put(v, function(err, data) {
+                    if (err) {
+                        console.error("Unable to update item. Error JSON:", JSON.stringify(err, null, 2));
+                    }
+                    else {
+                        console.log("UpdateItem succeeded:", JSON.stringify(data, null, 2));
+                    }
+                });
+            }
             const pubOpt = {
                 topic: 'topic/sensor',
                 payload: JSON.stringify(message)
