@@ -30,7 +30,28 @@ const board = new grovePi.board({
             var pir = Number(dPir.read());
             const message = {SensorId: sensorId, CreateAt: createAt, During: 0, Pir: pir, UpdateTime: now};
             if (pir) {
-
+                var up = {
+                    TableName: "MyPirSensor",
+                    Key: {
+                        SensorId: sensorId,
+                        CreateAt: createAt
+                    },
+                    UpdateExpression: "set During = During + :d, Pir = :p, UpdateTime = :u",
+                    ExpressionAttributeValues:{
+                        ":d": 5000,
+                        ":p": pir,
+                        ":u": now
+                    },
+                    ReturnValues: "UPDATED_NEW"
+                };
+                docClient.update(up, function(err, data) {
+                    if (err) {
+                        console.error("Unable to update item. Error JSON:", JSON.stringify(err, null, 2));
+                    }
+                    else {
+                        console.log("UpdateItem succeeded:", JSON.stringify(data, null, 2));
+                    }
+                });
             } else {
                 const v = {
                     TableName: "MyPirSensor",
@@ -58,3 +79,9 @@ exports.handler = function handler(event, context) {
     console.log("event: ", event);
     console.log("context:", context);
 };
+
+
+//  "Attributes": {
+//     "Pir": 1,
+//     "During": 5000
+//   }
