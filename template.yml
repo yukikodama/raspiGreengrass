@@ -28,21 +28,21 @@ Resources:
   DynamoDBTable:
     Type: AWS::DynamoDB::Table
     Properties:
-      TableName: MySensor
+      TableName: MyPirSensor
       BillingMode: PAY_PER_REQUEST
       AttributeDefinitions:
         -
-          AttributeName: Id
+          AttributeName: SensorId
           AttributeType: S
         -
-          AttributeName: Sensor
-          AttributeType: S
+          AttributeName: CreateAt
+          AttributeType: N
       KeySchema:
         -
-          AttributeName: Id
+          AttributeName: SensorId
           KeyType: HASH
         -
-          AttributeName: Sensor
+          AttributeName: CreateAt
           KeyType: RANGE
       StreamSpecification:
         StreamViewType: NEW_IMAGE
