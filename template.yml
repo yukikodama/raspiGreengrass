@@ -28,7 +28,7 @@ Resources:
   DynamoDBTable:
     Type: AWS::DynamoDB::Table
     Properties:
-      TableName: MyPirSensor
+      TableName: PirSensor
       BillingMode: PAY_PER_REQUEST
       AttributeDefinitions:
         -

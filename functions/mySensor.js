@@ -27,7 +27,7 @@ const board = new grovePi.board({
             const message = {SensorId: sensorId, During: 0, Pir: pir, CreateAt: createAt, UpdateAt: updateAt};
             if (pir) {
                 const up = {
-                    TableName: "MyPirSensor",
+                    TableName: "PirSensor",
                     Key: {SensorId: sensorId},
                     UpdateExpression: "set During = During + :d, Pir = :p, CreateAt = :c, UpdateAt = :u",
                     ExpressionAttributeValues:{":d": 5000, ":p": pir, ":c": createAt,":u": updateAt},
@@ -43,7 +43,7 @@ const board = new grovePi.board({
                     }
                 });
             } else {
-                const v = {TableName: "MyPirSensor", Item: message};
+                const v = {TableName: "PirSensor", Item: message};
                 docClient.put(v, function (err, data) {
                     if (err) {
                         console.error("Unable to update item. Error JSON:", JSON.stringify(err, null, 2));
