@@ -24,13 +24,13 @@ const board = new grovePi.board({
         setInterval(function () {
             const now = new Date().getTime();
             const pir = Number(dPir.read());
-            const message = {SensorId: sensorId, CreateAt: createAt, During: 0, Pir: pir, UpdateTime: now};
+            const message = {SensorId: sensorId, During: 0, Pir: pir, CreateAt: createAt, UpdateTime: now};
             if (pir) {
                 const up = {
                     TableName: "MyPirSensor",
-                    Key: {SensorId: sensorId, CreateAt: createAt},
-                    UpdateExpression: "set During = During + :d, Pir = :p, UpdateTime = :u",
-                    ExpressionAttributeValues:{":d": 5000, ":p": pir, ":u": now},
+                    Key: {SensorId: sensorId},
+                    UpdateExpression: "set During = During + :d, Pir = :p, CreateAt = :c,UpdateTime = :u",
+                    ExpressionAttributeValues:{":d": 5000, ":p": pir, ":c": createAt,":u": now},
                     ReturnValues: "UPDATED_NEW"
                 };
                 docClient.update(up, function(err, data) {

@@ -34,16 +34,10 @@ Resources:
         -
           AttributeName: SensorId
           AttributeType: S
-        -
-          AttributeName: CreateAt
-          AttributeType: N
       KeySchema:
         -
           AttributeName: SensorId
           KeyType: HASH
-        -
-          AttributeName: CreateAt
-          KeyType: RANGE
       StreamSpecification:
         StreamViewType: NEW_IMAGE
 
