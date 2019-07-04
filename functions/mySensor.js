@@ -17,20 +17,20 @@ function publishCallback(err, data) {
 const board = new grovePi.board({
     debug: true,
     onError: function (err) {
-        console.log(err);
+        console.error( JSON.stringify(err, null, 2));
     },
     onInit: function (res) {
-        const dPir = new digital(3);
+        const digitalSensor = new digital(3);
         setInterval(function () {
-            const now = new Date().getTime();
-            const pir = Number(dPir.read());
-            const message = {SensorId: sensorId, During: 0, Pir: pir, CreateAt: createAt, UpdateTime: now};
+            const updateAt = new Date().getTime();
+            const pir = Number(digitalSensor.read());
+            const message = {SensorId: sensorId, During: 0, Pir: pir, CreateAt: createAt, UpdateAt: updateAt};
             if (pir) {
                 const up = {
                     TableName: "MyPirSensor",
                     Key: {SensorId: sensorId},
-                    UpdateExpression: "set During = During + :d, Pir = :p, CreateAt = :c,UpdateTime = :u",
-                    ExpressionAttributeValues:{":d": 5000, ":p": pir, ":c": createAt,":u": now},
+                    UpdateExpression: "set During = During + :d, Pir = :p, CreateAt = :c, UpdateAt = :u",
+                    ExpressionAttributeValues:{":d": 5000, ":p": pir, ":c": createAt,":u": updateAt},
                     ReturnValues: "UPDATED_NEW"
                 };
                 docClient.update(up, function(err, data) {
