@@ -21,27 +21,16 @@ const board = new grovePi.board({
     },
     onInit: function (res) {
         const dPir = new digital(3);
-        const params = {
-            TableName: "MyPirSensor",
-            Key: {"SensorId": sensorId, "CreateAt": createAt},
-        };
         setInterval(function () {
             const now = new Date().getTime();
-            var pir = Number(dPir.read());
+            const pir = Number(dPir.read());
             const message = {SensorId: sensorId, CreateAt: createAt, During: 0, Pir: pir, UpdateTime: now};
             if (pir) {
-                var up = {
+                const up = {
                     TableName: "MyPirSensor",
-                    Key: {
-                        SensorId: sensorId,
-                        CreateAt: createAt
-                    },
+                    Key: {SensorId: sensorId, CreateAt: createAt},
                     UpdateExpression: "set During = During + :d, Pir = :p, UpdateTime = :u",
-                    ExpressionAttributeValues:{
-                        ":d": 5000,
-                        ":p": pir,
-                        ":u": now
-                    },
+                    ExpressionAttributeValues:{":d": 5000, ":p": pir, ":u": now},
                     ReturnValues: "UPDATED_NEW"
                 };
                 docClient.update(up, function(err, data) {
@@ -50,13 +39,11 @@ const board = new grovePi.board({
                     }
                     else {
                         console.log("UpdateItem succeeded:", JSON.stringify(data, null, 2));
+                        message.During = data.Attributes.During;
                     }
                 });
             } else {
-                const v = {
-                    TableName: "MyPirSensor",
-                    Item: message
-                };
+                const v = {TableName: "MyPirSensor", Item: message};
                 docClient.put(v, function (err, data) {
                     if (err) {
                         console.error("Unable to update item. Error JSON:", JSON.stringify(err, null, 2));
@@ -79,9 +66,3 @@ exports.handler = function handler(event, context) {
     console.log("event: ", event);
     console.log("context:", context);
 };
-
-
-//  "Attributes": {
-//     "Pir": 1,
-//     "During": 5000
-//   }
