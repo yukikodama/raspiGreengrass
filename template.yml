@@ -92,12 +92,6 @@ Resources:
         Fn::GetAtt:
           - LambdaExecutionRole
           - Arn
-      Events:
-        GetEvent:
-          Type: Api
-          Properties:
-            Path: /pir
-            Method: get
 
   LambdaExecutionRole:
     Description: Creating service role in IAM for AWS Lambda
