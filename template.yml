@@ -41,24 +41,6 @@ Resources:
       StreamSpecification:
         StreamViewType: NEW_IMAGE
 
-  HelloGreengrass:
-    Type: AWS::Serverless::Function
-    Properties:
-      Handler: index.handler
-      AutoPublishAlias: HelloGreengrass
-      FunctionName: HelloGreengrass
-      Runtime: nodejs8.10
-      Description: '(yuki-kodama Lambda node.js) HelloGreengrass Lambda in Node.js.'
-      MemorySize: 128
-      Timeout: 60
-      Environment:
-        Variables:
-          ALIASES: HelloGreengrass
-      Role:
-        Fn::GetAtt:
-          - LambdaExecutionRole
-          - Arn
-
   RaspiGreengrass:
     Type: AWS::Serverless::Function
     Properties:
@@ -116,6 +98,7 @@ Resources:
           Properties:
             Path: /pir
             Method: get
+
   LambdaExecutionRole:
     Description: Creating service role in IAM for AWS Lambda
     Type: AWS::IAM::Role
