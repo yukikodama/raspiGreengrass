@@ -78,13 +78,13 @@ Resources:
   AWSGetPirSensorAPI:
     Type: AWS::Serverless::Function
     Properties:
-      Handler: functions/api/index.handler
+      Handler: index.handler
       AutoPublishAlias: PirSensor
       FunctionName: AWSGetPirSensorAPI
       Runtime: nodejs8.10
       Description: '(yuki-kodama Lambda node.js) AWSGetPirSensorAPI Lambda in Node.js.'
       MemorySize: 128
-      Timeout: 60
+      Timeout: 30
       Environment:
         Variables:
           TABLE_NAME: PirSensor
@@ -92,6 +92,12 @@ Resources:
         Fn::GetAtt:
           - LambdaExecutionRole
           - Arn
+      Events:
+        GetEvent:
+          Type: Api
+          Properties:
+            Path: /
+            Method: get
 
   LambdaExecutionRole:
     Description: Creating service role in IAM for AWS Lambda
