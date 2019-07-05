@@ -79,7 +79,6 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       Handler: index.handler
-      FunctionName: AWSGetPirSensorAPI
       Runtime: nodejs8.10
       Description: '(yuki-kodama Lambda node.js) AWSGetPirSensorAPI Lambda in Node.js.'
       MemorySize: 128
