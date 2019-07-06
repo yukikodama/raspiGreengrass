@@ -7,8 +7,7 @@ exports.handler = (event, context, callback) => {
     const done = (err, res) => callback(null, {
         statusCode: err ? '400' : '200',
         body: err ? err.message : JSON.stringify(res),
-        headers: {'Content-Type': 'application/json'},
+        headers: {'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*'},
     });
-    const params = {TableName : 'PirSensor'};
-    docClient.scan(params, done);
+    docClient.scan({TableName : 'PirSensor'}, done);
 }
