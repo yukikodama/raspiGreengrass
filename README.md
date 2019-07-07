@@ -11,7 +11,8 @@ This sample includes:
 * README.md - this file
 * buildspec.yml - this file is used by AWS CodeBuild to package your
   application for deployment to AWS Lambda
-* index.js - this file contains the sample Node.js code for the web service
+* index.js - this file contains the sample Node.js code for the web service(API)
+* functions/ - these files contain the sample Node.js code for the AWS IoT Greengrass
 * template.yml - this file contains the AWS Serverless Application Model (AWS SAM) used
   by AWS CloudFormation to deploy your application to AWS Lambda and Amazon API
   Gateway.
@@ -62,3 +63,7 @@ should also regularly review and apply any available patches or associated secur
 advisories for dependencies used within your application.
 
 Best Practices: https://docs.aws.amazon.com/codestar/latest/userguide/best-practices.html?icmpid=docs_acs_rm_sec
+
+
+## License
+This software is released under the MIT License, see license.txt.
