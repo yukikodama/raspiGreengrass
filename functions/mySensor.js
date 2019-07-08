@@ -9,8 +9,6 @@ const digital = grovePi.sensors.base.Digital;
 const sensorId = require('proc-cpuinfo')()["Serial"][0];
 const createAt = new Date().getTime();
 
-var p = 1;
-
 function publishCallback(err, data) {
     console.error(err);
     console.log(data);
@@ -44,17 +42,14 @@ const board = new grovePi.board({
                     }
                 });
             } else {
-                if (p) {
-                    const v = {TableName: "PirSensor", Item: message};
-                    docClient.put(v, function (err, data) {
-                        if (err) {
-                            console.error("Unable to update item. Error JSON:", JSON.stringify(err, null, 2));
-                        } else {
-                            console.log("UpdateItem succeeded:", JSON.stringify(data, null, 2));
-                        }
-                    });
-                    p = 0;
-                }
+                const v = {TableName: "PirSensor", Item: message};
+                docClient.put(v, function (err, data) {
+                    if (err) {
+                        console.error("Unable to update item. Error JSON:", JSON.stringify(err, null, 2));
+                    } else {
+                        console.log("UpdateItem succeeded:", JSON.stringify(data, null, 2));
+                    }
+                });
             }
             const pubOpt = {
                 topic: 'topic/sensor',
