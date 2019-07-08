@@ -12,7 +12,7 @@ const createAt = new Date().getTime();
 var p = 1;
 
 function publishCallback(err, data) {
-    console.log(err);
+    console.error(err);
     console.log(data);
 }
 
