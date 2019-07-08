@@ -1,0 +1,683 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="4c09ea9f-787c-41fa-afaa-cc6d29955f7d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/functions/mySensor.js" beforeDir="false" afterPath="$PROJECT_DIR$/functions/mySensor.js" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/out/" />
+    <ignored path="$PROJECT_DIR$/node_modules/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="isMigrated" value="true" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/functions/mySensor.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="524">
+              <caret line="63" column="52" lean-forward="true" selection-start-line="63" selection-start-column="52" selection-end-line="63" selection-end-column="52" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/template.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1418">
+              <caret line="81" column="8" selection-start-line="81" selection-start-column="8" selection-end-line="81" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="171">
+              <caret line="9" column="30" lean-forward="true" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/dummyTest.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="190">
+              <caret line="10" column="3" lean-forward="true" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="133">
+              <caret line="7" column="24" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/buildspec.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="304">
+              <caret line="16" column="74" lean-forward="true" selection-start-line="16" selection-start-column="74" selection-end-line="16" selection-end-column="74" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>AttributeDefinitions</find>
+      <find>DocumentClient</find>
+      <find>networkInterfaces</find>
+      <find>DynamoDBTable</find>
+      <find>MySensor</find>
+      <find>Key</find>
+      <find>Tye</find>
+      <find>GrovePi</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/functions/raspiGreengrass.js" />
+        <option value="$PROJECT_DIR$/functions/helloGreengrass.js" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/index.js" />
+        <option value="$PROJECT_DIR$/template.yml" />
+        <option value="$PROJECT_DIR$/functions/mySensor.js" />
+      </list>
+    </option>
+  </component>
+  <component name="PackageJsonUpdateNotifier">
+    <dismissed value="$PROJECT_DIR$/package.json" />
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="y" value="138" />
+    <option name="width" value="1440" />
+    <option name="height" value="815" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="raspiGreengrass" type="b2602c69:ProjectViewProjectNode" />
+              <item name="raspiGreengrass" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="raspiGreengrass" type="b2602c69:ProjectViewProjectNode" />
+              <item name="raspiGreengrass" type="462c0819:PsiDirectoryNode" />
+              <item name="functions" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="raspiGreengrass" type="b2602c69:ProjectViewProjectNode" />
+              <item name="raspiGreengrass" type="462c0819:PsiDirectoryNode" />
+              <item name="tests" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path" value="node" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="settings.nodejs" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4c09ea9f-787c-41fa-afaa-cc6d29955f7d" name="Default Changelist" comment="" />
+      <created>1559624208673</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1559624208673</updated>
+      <workItem from="1559624210271" duration="198000" />
+      <workItem from="1559629952664" duration="37160000" />
+      <workItem from="1561950013738" duration="101000" />
+      <workItem from="1561950138459" duration="13615000" />
+      <workItem from="1562045431788" duration="8533000" />
+      <workItem from="1562317522770" duration="10481000" />
+    </task>
+    <task id="LOCAL-00009" summary="require aws.">
+      <created>1560740378519</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1560740378519</updated>
+    </task>
+    <task id="LOCAL-00010" summary="require aws.">
+      <created>1560747265010</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1560747265010</updated>
+    </task>
+    <task id="LOCAL-00011" summary="AutoPublishAlias">
+      <created>1560748019575</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1560748019575</updated>
+    </task>
+    <task id="LOCAL-00012" summary="client.">
+      <created>1560751304478</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1560751304478</updated>
+    </task>
+    <task id="LOCAL-00013" summary="fix json.">
+      <created>1560753230132</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1560753230132</updated>
+    </task>
+    <task id="LOCAL-00014" summary="change iam.">
+      <created>1560754502354</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1560754502354</updated>
+    </task>
+    <task id="LOCAL-00015" summary="change iam.">
+      <created>1560755837978</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1560755837978</updated>
+    </task>
+    <task id="LOCAL-00016" summary="change iam.">
+      <created>1560756991711</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1560756991711</updated>
+    </task>
+    <task id="LOCAL-00017" summary="user ip.">
+      <created>1560763026907</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1560763026907</updated>
+    </task>
+    <task id="LOCAL-00018" summary="change DynamoDB.">
+      <created>1560764659542</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1560764659543</updated>
+    </task>
+    <task id="LOCAL-00019" summary="change DynamoDB.">
+      <created>1560765122699</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1560765122699</updated>
+    </task>
+    <task id="LOCAL-00020" summary="change DynamoDB.">
+      <created>1560766001651</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1560766001651</updated>
+    </task>
+    <task id="LOCAL-00021" summary="change os.">
+      <created>1560768631277</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1560768631277</updated>
+    </task>
+    <task id="LOCAL-00022" summary="change os.">
+      <created>1560821222642</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1560821222642</updated>
+    </task>
+    <task id="LOCAL-00023" summary="change fs.">
+      <created>1560823376809</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1560823376809</updated>
+    </task>
+    <task id="LOCAL-00024" summary="change os.">
+      <created>1560828201615</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1560828201615</updated>
+    </task>
+    <task id="LOCAL-00025" summary="change os.">
+      <created>1560839638351</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1560839638351</updated>
+    </task>
+    <task id="LOCAL-00026" summary="change os.">
+      <created>1560840016659</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1560840016659</updated>
+    </task>
+    <task id="LOCAL-00027" summary="add DynamoDBTable.">
+      <created>1560840161188</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1560840161188</updated>
+    </task>
+    <task id="LOCAL-00028" summary="add node-uuid">
+      <created>1560844212241</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1560844212241</updated>
+    </task>
+    <task id="LOCAL-00029" summary="check first put.">
+      <created>1560848875993</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1560848875993</updated>
+    </task>
+    <task id="LOCAL-00030" summary="check first put.">
+      <created>1560850766786</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1560850766786</updated>
+    </task>
+    <task id="LOCAL-00031" summary="check first put.">
+      <created>1560859053105</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1560859053105</updated>
+    </task>
+    <task id="LOCAL-00032" summary="add sensor code.">
+      <created>1561966501320</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1561966501320</updated>
+    </task>
+    <task id="LOCAL-00033" summary="fix attributeType">
+      <created>1561967427628</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1561967427628</updated>
+    </task>
+    <task id="LOCAL-00034" summary="LocalSecondaryIndexes">
+      <created>1561970685255</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1561970685255</updated>
+    </task>
+    <task id="LOCAL-00035" summary="fix AttributeType.">
+      <created>1561972041143</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1561972041143</updated>
+    </task>
+    <task id="LOCAL-00036" summary="fix AttributeType.">
+      <created>1561973074320</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1561973074320</updated>
+    </task>
+    <task id="LOCAL-00037" summary="LocalSecondaryIndexes">
+      <created>1561973668044</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1561973668045</updated>
+    </task>
+    <task id="LOCAL-00038" summary="del LocalSecondaryIndexes">
+      <created>1561974600774</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1561974600774</updated>
+    </task>
+    <task id="LOCAL-00039" summary="LocalSecondaryIndexes">
+      <created>1561975294745</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1561975294745</updated>
+    </task>
+    <task id="LOCAL-00040" summary="fix AttributeType.">
+      <created>1561975571349</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1561975571349</updated>
+    </task>
+    <task id="LOCAL-00041" summary="fix AttributeType.">
+      <created>1561975981180</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1561975981180</updated>
+    </task>
+    <task id="LOCAL-00042" summary="Sensor">
+      <created>1561976729225</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1561976729225</updated>
+    </task>
+    <task id="LOCAL-00043" summary="PirSensor">
+      <created>1561977176596</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1561977176596</updated>
+    </task>
+    <task id="LOCAL-00044" summary="fix dynamodb">
+      <created>1561977721080</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1561977721080</updated>
+    </task>
+    <task id="LOCAL-00045" summary="delete dynamodb">
+      <created>1561979454642</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1561979454642</updated>
+    </task>
+    <task id="LOCAL-00046" summary="add pir code.">
+      <created>1562045654547</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1562045654548</updated>
+    </task>
+    <task id="LOCAL-00047" summary="fix grovePi.">
+      <created>1562052494481</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1562052494481</updated>
+    </task>
+    <task id="LOCAL-00048" summary="put DynamoDB.">
+      <created>1562055983956</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1562055983956</updated>
+    </task>
+    <task id="LOCAL-00049" summary="put DynamoDB.">
+      <created>1562059288410</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1562059288410</updated>
+    </task>
+    <task id="LOCAL-00050" summary="put DynamoDB.">
+      <created>1562060796287</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1562060796288</updated>
+    </task>
+    <task id="LOCAL-00051" summary="change Sensor.">
+      <created>1562061156865</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1562061156866</updated>
+    </task>
+    <task id="LOCAL-00052" summary="change api.">
+      <created>1562321857286</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1562321857287</updated>
+    </task>
+    <task id="LOCAL-00053" summary="del alias and function name.">
+      <created>1562326918032</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1562326918032</updated>
+    </task>
+    <task id="LOCAL-00054" summary="fix.">
+      <created>1562385412516</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1562385412516</updated>
+    </task>
+    <task id="LOCAL-00055" summary="fix.">
+      <created>1562396753962</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1562396753962</updated>
+    </task>
+    <task id="LOCAL-00056" summary="change log level error.">
+      <created>1562547291776</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1562547291776</updated>
+    </task>
+    <task id="LOCAL-00057" summary="delete groval var.">
+      <created>1562548563261</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1562548563261</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="70088000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="138" width="1440" height="815" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2739628" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="aws.explorer" order="2" side_tool="true" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="Designer" order="4" />
+      <window_info id="UI Designer" order="5" />
+      <window_info id="Capture Tool" order="6" />
+      <window_info id="Favorites" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" visible="true" weight="0.31142858" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.32998565" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="12" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Theme Preview" order="3" />
+      <window_info anchor="right" id="Maven" order="4" />
+      <window_info anchor="right" id="Palette" order="5" />
+      <window_info anchor="right" id="Capture Analysis" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Database" order="8" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="user ip." />
+    <MESSAGE value="change DynamoDB." />
+    <MESSAGE value="change fs." />
+    <MESSAGE value="change os." />
+    <MESSAGE value="add DynamoDBTable." />
+    <MESSAGE value="add node-uuid" />
+    <MESSAGE value="check first put." />
+    <MESSAGE value="add sensor code." />
+    <MESSAGE value="fix attributeType" />
+    <MESSAGE value="del LocalSecondaryIndexes" />
+    <MESSAGE value="LocalSecondaryIndexes" />
+    <MESSAGE value="fix AttributeType." />
+    <MESSAGE value="Sensor" />
+    <MESSAGE value="PirSensor" />
+    <MESSAGE value="fix dynamodb" />
+    <MESSAGE value="delete dynamodb" />
+    <MESSAGE value="add pir code." />
+    <MESSAGE value="fix grovePi." />
+    <MESSAGE value="put DynamoDB." />
+    <MESSAGE value="change Sensor." />
+    <MESSAGE value="change api." />
+    <MESSAGE value="del alias and function name." />
+    <MESSAGE value="fix." />
+    <MESSAGE value="change log level error." />
+    <MESSAGE value="delete groval var." />
+    <option name="LAST_COMMIT_MESSAGE" value="delete groval var." />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/functions/helloGreengrass.js" />
+    <entry file="file://$PROJECT_DIR$/template-configuration.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/functions/raspiGreengrass.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="239">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/buildspec.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="16" column="74" lean-forward="true" selection-start-line="16" selection-start-column="74" selection-end-line="16" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/dummyTest.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" column="3" lean-forward="true" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="9" column="30" lean-forward="true" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="24" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1418">
+          <caret line="81" column="8" selection-start-line="81" selection-start-column="8" selection-end-line="81" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/functions/mySensor.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="524">
+          <caret line="63" column="52" lean-forward="true" selection-start-line="63" selection-start-column="52" selection-end-line="63" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>11</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
