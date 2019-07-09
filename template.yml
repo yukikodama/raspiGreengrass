@@ -40,7 +40,21 @@ Resources:
           KeyType: HASH
       StreamSpecification:
         StreamViewType: NEW_IMAGE
-
+  DynamoDBTableCF:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: conferenceRoomSensor
+      BillingMode: PAY_PER_REQUEST
+      AttributeDefinitions:
+        -
+          AttributeName: SensorId
+          AttributeType: S
+      KeySchema:
+        -
+          AttributeName: SensorId
+          KeyType: HASH
+      StreamSpecification:
+        StreamViewType: NEW_IMAGE
   RaspiGreengrass:
     Type: AWS::Serverless::Function
     Properties:
