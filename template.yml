@@ -58,19 +58,16 @@ Resources:
         Fn::GetAtt:
         - LambdaExecutionRole
         - Arn
-  MySensor:
+  MyPirSensor:
     Type: AWS::Serverless::Function
     Properties:
-      Handler: functions/mySensor.handler
-      AutoPublishAlias: MySensor
-      FunctionName: MySensor
+      Handler: functions/MyPirSensor.handler
+      AutoPublishAlias: MyPirSensor
+      FunctionName: MyPirSensor
       Runtime: nodejs8.10
-      Description: '(yuki-kodama Lambda node.js) MySensor Lambda in Node.js.'
+      Description: '(yuki-kodama Lambda node.js) MyPirSensor Lambda in Node.js.'
       MemorySize: 128
       Timeout: 60
-      Environment:
-        Variables:
-          ALIASES: MySensor
       Role:
         Fn::GetAtt:
           - LambdaExecutionRole
