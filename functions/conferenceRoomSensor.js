@@ -9,59 +9,35 @@ const digital = grovePi.sensors.base.Digital;
 const sensorId = require('proc-cpuinfo')()["Serial"][0];
 const createAt = new Date().getTime();
 
-function publishCallback(err, data) {
-    console.error("publishCallback error: ", err);
-    console.log("publishCallback data: ", data);
+const publishCallback = async (err, data) => {
+    console.error("publishCallback error: ", await err);
+    console.log("publishCallback data: ", await data);
 }
 
+const onErrorFunction = async (err) => {
+    console.error("onError: ", JSON.stringify(err, null, 2));
+}
+
+const onInitFunction = async () => {
+    const digitalSensor = new digital(3);
+    setInterval(function(){intervalExecute(digitalSensor)}, 1000);
+}
+
+const intervalExecute = async (digitalSensor) => {
+    const updateAt = new Date().getTime();
+    const pir = Number(digitalSensor.read());
+    console.log(await pir);
+
+}
 const board = new grovePi.board({
     debug: true,
-    onError: function (err) {
-        console.error("onError: ", JSON.stringify(err, null, 2));
-    },
-    onInit: function (res) {
-        const digitalSensor = new digital(3);
-        setInterval(function () {
-            const updateAt = new Date().getTime();
-            const pir = Number(digitalSensor.read());
-            const message = {SensorId: sensorId, During: 0, Pir: pir, CreateAt: createAt, UpdateAt: updateAt};
-            if (pir) {
-                const up = {
-                    TableName: "PirSensor",
-                    Key: {SensorId: sensorId},
-                    UpdateExpression: "set During = During + :d, Pir = :p, CreateAt = :c, UpdateAt = :u",
-                    ExpressionAttributeValues: {":d": 5000, ":p": pir, ":c": createAt, ":u": updateAt},
-                    ReturnValues: "UPDATED_NEW"
-                };
-                docClient.update(up, function (err, data) {
-                    if (err) {
-                        console.error("Unable to update item. Error JSON:", JSON.stringify(err, null, 2));
-                    } else {
-                        console.log("UpdateItem succeeded:", JSON.stringify(data, null, 2));
-                        message.During = data.Attributes.During;
-                    }
-                });
-            } else {
-                const v = {TableName: "PirSensor", Item: message};
-                docClient.put(v, function (err, data) {
-                    if (err) {
-                        console.error("Unable to put item. Error JSON:", JSON.stringify(err, null, 2));
-                    } else {
-                        console.log("PutItem succeeded:", JSON.stringify(data, null, 2));
-                    }
-                });
-            }
-            const pubOpt = {
-                topic: 'topic/sensor',
-                payload: JSON.stringify(message)
-            };
-            iotClient.publish(pubOpt, publishCallback);
-        }, 5000);
-    }
+    onError: onErrorFunction,
+    onInit: onInitFunction
 });
 board.init();
 
-exports.handler = function handler(event, context) {
+exports.handler = async (event, context, callback) => {
     console.log("event: ", event);
     console.log("context:", context);
-};
+    callback(null, 'ok')
+}
