@@ -43,7 +43,7 @@ Resources:
   DynamoDBTableCF:
     Type: AWS::DynamoDB::Table
     Properties:
-      TableName: conferenceRoomSensor
+      TableName: cfRoomSensor
       BillingMode: PAY_PER_REQUEST
       AttributeDefinitions:
         -
