@@ -49,10 +49,16 @@ Resources:
         -
           AttributeName: SensorId
           AttributeType: S
+        -
+          AttributeName: UpdateAt
+          AttributeType: N
       KeySchema:
         -
           AttributeName: SensorId
           KeyType: HASH
+        -
+          AttributeName: UpdateAt
+          KeyType: RANGE
       StreamSpecification:
         StreamViewType: NEW_IMAGE
   RaspiGreengrass:
