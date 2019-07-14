@@ -92,6 +92,20 @@ Resources:
         Fn::GetAtt:
           - LambdaExecutionRole
           - Arn
+  ConferenceRoomSensor:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: functions/conferenceRoomSensor.handler
+      AutoPublishAlias: conferenceRoomSensor
+      FunctionName: conferenceRoomSensor
+      Runtime: nodejs8.10
+      Description: '(yuki-kodama Lambda node.js) conferenceRoomSensor Lambda in Node.js.'
+      MemorySize: 128
+      Timeout: 60
+      Role:
+        Fn::GetAtt:
+          - LambdaExecutionRole
+          - Arn
   AWSGetPirSensorAPI:
     Type: AWS::Serverless::Function
     Properties:
@@ -112,7 +126,7 @@ Resources:
         GetEvent:
           Type: Api
           Properties:
-            Path: /
+            Path: /pir
             Method: get
 
   LambdaExecutionRole:
