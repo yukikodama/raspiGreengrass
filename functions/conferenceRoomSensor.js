@@ -41,7 +41,7 @@ const intervalExecute = async () => {
     iotClient.publish(pubOpt, publishCallback);
 }
 
-const board = new grovePi.board({
+const board = new GrovePi.board({
     debug: true,
     onError: onErrorFunction,
     onInit: onInitFunction
