@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="4c09ea9f-787c-41fa-afaa-cc6d29955f7d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template.yml" beforeDir="false" afterPath="$PROJECT_DIR$/template.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/conferenceRoomSensor.js" beforeDir="false" afterPath="$PROJECT_DIR$/functions/conferenceRoomSensor.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/node_modules/" />
@@ -18,20 +18,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/functions/conferenceRoomSensor.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="36" column="34" selection-start-line="36" selection-start-column="22" selection-end-line="36" selection-end-column="34" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/template.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="372">
-              <caret line="128" column="22" selection-start-line="128" selection-start-column="22" selection-end-line="128" selection-end-column="22" />
+            <state relative-caret-position="97">
+              <caret line="25" column="36" lean-forward="true" selection-start-line="25" selection-start-column="36" selection-end-line="25" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -39,8 +30,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/functions/myPirSensor.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="29">
-              <caret line="26" column="110" lean-forward="true" selection-start-line="26" selection-start-column="12" selection-end-line="26" selection-end-column="110" />
+            <state relative-caret-position="367">
+              <caret line="57" column="36" selection-start-line="57" selection-start-column="30" selection-end-line="57" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -77,8 +68,8 @@
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/index.js" />
         <option value="$PROJECT_DIR$/functions/mySensor.js" />
-        <option value="$PROJECT_DIR$/functions/conferenceRoomSensor.js" />
         <option value="$PROJECT_DIR$/template.yml" />
+        <option value="$PROJECT_DIR$/functions/conferenceRoomSensor.js" />
       </list>
     </option>
   </component>
@@ -86,9 +77,8 @@
     <dismissed value="$PROJECT_DIR$/package.json" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="32" />
-    <option name="y" value="54" />
-    <option name="width" value="1440" />
+    <option name="y" value="203" />
+    <option name="width" value="1609" />
     <option name="height" value="815" />
   </component>
   <component name="ProjectView">
@@ -169,21 +159,7 @@
       <workItem from="1562045431788" duration="8533000" />
       <workItem from="1562317522770" duration="10481000" />
       <workItem from="1562599359897" duration="573000" />
-      <workItem from="1562767029749" duration="4796000" />
-    </task>
-    <task id="LOCAL-00011" summary="AutoPublishAlias">
-      <created>1560748019575</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1560748019575</updated>
-    </task>
-    <task id="LOCAL-00012" summary="client.">
-      <created>1560751304478</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1560751304478</updated>
+      <workItem from="1562767029749" duration="6759000" />
     </task>
     <task id="LOCAL-00013" summary="fix json.">
       <created>1560753230132</created>
@@ -514,16 +490,31 @@
       <option name="project" value="LOCAL" />
       <updated>1563082907749</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="change cfRoomSensor">
+      <created>1563083873218</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1563083873218</updated>
+    </task>
+    <task id="LOCAL-00061" summary="change GrovePi.">
+      <created>1563194762870</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1563194762870</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="75457000" />
+    <option name="totallyTimeSpent" value="77420000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="32" y="54" width="1440" height="815" extended-state="0" />
+    <frame x="0" y="203" width="1609" height="815" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2811159" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2507977" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="aws.explorer" order="2" side_tool="true" />
       <window_info id="Image Layers" order="3" />
@@ -560,7 +551,6 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="change fs." />
     <MESSAGE value="change os." />
     <MESSAGE value="add DynamoDBTable." />
     <MESSAGE value="add node-uuid" />
@@ -585,7 +575,8 @@
     <MESSAGE value="delete groval var." />
     <MESSAGE value="CF code." />
     <MESSAGE value="change cfRoomSensor" />
-    <option name="LAST_COMMIT_MESSAGE" value="change cfRoomSensor" />
+    <MESSAGE value="change GrovePi." />
+    <option name="LAST_COMMIT_MESSAGE" value="change GrovePi." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/functions/helloGreengrass.js" />
@@ -634,24 +625,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/template.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="128" column="22" selection-start-line="128" selection-start-column="22" selection-end-line="128" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/functions/myPirSensor.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="29">
-          <caret line="26" column="110" lean-forward="true" selection-start-line="26" selection-start-column="12" selection-end-line="26" selection-end-column="110" />
+        <state relative-caret-position="367">
+          <caret line="57" column="36" selection-start-line="57" selection-start-column="30" selection-end-line="57" selection-end-column="36" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/functions/conferenceRoomSensor.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="36" column="34" selection-start-line="36" selection-start-column="22" selection-end-line="36" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/template.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="372">
-          <caret line="128" column="22" selection-start-line="128" selection-start-column="22" selection-end-line="128" selection-end-column="22" />
+        <state relative-caret-position="97">
+          <caret line="25" column="36" lean-forward="true" selection-start-line="25" selection-start-column="36" selection-end-line="25" selection-end-column="36" />
         </state>
       </provider>
     </entry>

@@ -24,7 +24,7 @@ const onErrorFunction = async (err) => {
 }
 
 const onInitFunction = async () => {
-    setInterval(function(){intervalExecute()}, 1000);
+    setInterval(function(){intervalExecute()}, 10000);
 }
 
 const intervalExecute = async () => {
@@ -32,7 +32,7 @@ const intervalExecute = async () => {
     const sound = Number(a1.read());
     const pir   = Number(d2.read());
     const updateAt = new Date().getTime();
-    const message = {SensorId: sensorId, UpdateAt: updateAt, During: 0, Light: light, Sound: sound, Pir: pir, CreateAt: createAt, };
+    const message = {SensorId: sensorId, UpdateAt: updateAt, During: 0, Light: light, Sound: sound, Pir: pir, CreateAt: createAt};
     const pubOpt = {
         topic: 'topic/cfRoomSensor',
         payload: JSON.stringify(message)
