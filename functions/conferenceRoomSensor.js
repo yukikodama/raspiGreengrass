@@ -33,11 +33,18 @@ const intervalExecute = async () => {
     const pir   = Number(d2.read());
     const updateAt = new Date().getTime();
     const message = {SensorId: sensorId, UpdateAt: updateAt, During: 0, Light: light, Sound: sound, Pir: pir, CreateAt: createAt};
+    const putItem = {TableName: "cfRoomSensor", Item: message};
     const pubOpt = {
         topic: 'topic/cfRoomSensor',
         payload: JSON.stringify(message)
     };
-    console.log("message: ", await message);
+    docClient.put(putItem, function (err, data) {
+        if (err) {
+            console.error("Unable to put item. Error JSON:", JSON.stringify(err, null, 2));
+        } else {
+            console.log("PutItem succeeded:", JSON.stringify(data, null, 2));
+        }
+    });
     iotClient.publish(pubOpt, publishCallback);
 }
 
