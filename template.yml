@@ -25,6 +25,21 @@ Globals:
       Role: !Ref CodeDeployRole
 
 Resources:
+  DynamoDBTableSensor:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: Sensor
+      BillingMode: PAY_PER_REQUEST
+      AttributeDefinitions:
+        -
+          AttributeName: SensorId
+          AttributeType: S
+      KeySchema:
+        -
+          AttributeName: SensorId
+          KeyType: HASH
+      StreamSpecification:
+        StreamViewType: NEW_IMAGE
   DynamoDBTable:
     Type: AWS::DynamoDB::Table
     Properties:

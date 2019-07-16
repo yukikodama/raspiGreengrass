@@ -24,6 +24,10 @@ const onErrorFunction = async (err) => {
 }
 
 const onInitFunction = async () => {
+    const sensor = {TableName: "Sensor", Item: {SensorId: sensorId}};
+    docClient.put(sensor, function (err, data) {
+        console.log("Put Sensor succeeded:");
+    });
     setInterval(function(){intervalExecute()}, 10000);
 }
 
