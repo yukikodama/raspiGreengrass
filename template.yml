@@ -126,7 +126,7 @@ Resources:
     Properties:
       Handler: index.handler
       # FunctionName: AWSGetPirSensorAPI
-      Runtime: nodejs8.10
+      Runtime: nodejs10.x
       Description: '(yuki-kodama Lambda node.js) AWSGetPirSensorAPI Lambda in Node.js.'
       MemorySize: 128
       Timeout: 30

@@ -29,7 +29,7 @@ const cfRoomSensorParams = {
     Limit: 5
 };
 
-exports.handler = (event, context, callback) => {
+exports.handler = async (event, context, callback) => {
     const done = (err, res) => callback(null, {
         statusCode: err ? '400' : '200',
         body: err ? err.message : JSON.stringify(res),
