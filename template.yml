@@ -65,7 +65,7 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       Handler: functions/raspiGreengrass.handler
-      AutoPublishAlias: GrovePiLongInterval
+      AutoPublishAlias: raspiGreengrass
       FunctionName: RaspiGreengrass
       Runtime: nodejs8.10
       Description: '(yuki-kodama Lambda node.js) RaspiGreengrass Lambda in Node.js.'
@@ -82,7 +82,7 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       Handler: functions/myPirSensor.handler
-      AutoPublishAlias: MyPirSensor
+      AutoPublishAlias: myPirSensor
       FunctionName: myPirSensor
       Runtime: nodejs8.10
       Description: '(yuki-kodama Lambda node.js) myPirSensor Lambda in Node.js.'
