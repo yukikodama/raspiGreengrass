@@ -40,7 +40,27 @@ Resources:
           KeyType: HASH
       StreamSpecification:
         StreamViewType: NEW_IMAGE
-
+  DynamoDBTablePirSensor:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: PirSensor
+      BillingMode: PAY_PER_REQUEST
+      AttributeDefinitions:
+        -
+          AttributeName: SensorId
+          AttributeType: S
+        -
+          AttributeName: UpdateAt
+          AttributeType: N
+      KeySchema:
+        -
+          AttributeName: SensorId
+          KeyType: HASH
+        -
+          AttributeName: UpdateAt
+          KeyType: RANGE
+      StreamSpecification:
+        StreamViewType: NEW_IMAGE
   DynamoDBTableCF:
     Type: AWS::DynamoDB::Table
     Properties:
@@ -111,7 +131,7 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       Handler: index.handler
-      FunctionName: AWSGetPirSensorAPI
+      # FunctionName: AWSGetPirSensorAPI
       Runtime: nodejs10.x
       Description: '(yuki-kodama Lambda node.js) AWSGetPirSensorAPI Lambda in Node.js.'
       MemorySize: 128
