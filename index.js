@@ -26,7 +26,7 @@ const cfRoomSensorParams = {
     },
     ExpressionAttributeValues: {},
     ScanIndexForward: false,
-    Limit: 5
+    Limit: 60
 };
 
 exports.handler = async (event, context, callback) => {
