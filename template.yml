@@ -40,21 +40,7 @@ Resources:
           KeyType: HASH
       StreamSpecification:
         StreamViewType: NEW_IMAGE
-  DynamoDBTablePirSensor:
-    Type: AWS::DynamoDB::Table
-    Properties:
-      TableName: PirSensor
-      BillingMode: PAY_PER_REQUEST
-      AttributeDefinitions:
-        -
-          AttributeName: SensorId
-          AttributeType: S
-      KeySchema:
-        -
-          AttributeName: SensorId
-          KeyType: HASH
-      StreamSpecification:
-        StreamViewType: NEW_IMAGE
+
   DynamoDBTableCF:
     Type: AWS::DynamoDB::Table
     Properties:
