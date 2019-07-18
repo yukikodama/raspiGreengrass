@@ -61,6 +61,27 @@ Resources:
           KeyType: RANGE
       StreamSpecification:
         StreamViewType: NEW_IMAGE
+  DynamoDBTablePirSensor:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: PirSensor
+      BillingMode: PAY_PER_REQUEST
+      AttributeDefinitions:
+        -
+          AttributeName: SensorId
+          AttributeType: S
+        -
+          AttributeName: UpdateAt
+          AttributeType: N
+      KeySchema:
+        -
+          AttributeName: SensorId
+          KeyType: HASH
+        -
+          AttributeName: UpdateAt
+          KeyType: RANGE
+      StreamSpecification:
+        StreamViewType: NEW_IMAGE
   RaspiGreengrass:
     Type: AWS::Serverless::Function
     Properties:
