@@ -35,7 +35,7 @@ exports.handler = async (event, context, callback) => {
         body: err ? err.message : JSON.stringify(res),
         headers: {'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*'},
     });
-    const s = await docClientFunction({ TableName: 'Sensor' }, true);
+    const s = await docClientFunction({ TableName: 'PirSensor' }, true);
     console.info("s: ", s);
     var array = [];
     for (var i of s) {
