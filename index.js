@@ -19,7 +19,7 @@ const docClientFunction = async(params, scan = false) => {
 };
 
 const cfRoomSensorParams = {
-    TableName: 'cfRoomSensor',
+    TableName: 'PirSensor',
     KeyConditionExpression: "#si = :s",
     ExpressionAttributeNames: {
         "#si": "SensorId"
@@ -35,7 +35,7 @@ exports.handler = async (event, context, callback) => {
         body: err ? err.message : JSON.stringify(res),
         headers: {'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*'},
     });
-    const s = await docClientFunction({ TableName: 'PirSensor' }, true);
+    const s = await docClientFunction({ TableName: 'Sensor' }, true);
     console.info("s: ", s);
     var array = [];
     for (var i of s) {
