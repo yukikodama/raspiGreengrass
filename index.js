@@ -24,7 +24,8 @@ const cfRoomSensorParams = {
         "#si": "SensorId"
     },
     ExpressionAttributeValues: {},
-    ScanIndexForward: false
+    ScanIndexForward: false,
+    Limits: 60
 };
 
 const getLimit = async (event) => {
@@ -36,6 +37,8 @@ const getLimit = async (event) => {
 }
 
 exports.handler = async (event, context, callback) => {
+    console.log("event: ", event);
+    console.log("context:", context);
     const done = (err, res) => callback(null, {
         statusCode: err ? '400' : '200',
         body: err ? err.message : JSON.stringify(res),
