@@ -25,7 +25,7 @@ const cfRoomSensorParams = {
     },
     ExpressionAttributeValues: {},
     ScanIndexForward: false,
-    Limits: 60
+    Limit: 60
 };
 
 const getLimit = async (event) => {
@@ -47,7 +47,7 @@ exports.handler = async (event, context, callback) => {
     const s = await docClientFunction({ TableName: 'Sensor' }, true);
     console.info("s: ", s);
     var array = [];
-    cfRoomSensorParams.Limits = await getLimit(event);
+    cfRoomSensorParams.Limit = await getLimit(event);
     for (var i of s) {
         cfRoomSensorParams.ExpressionAttributeValues = { ":s": i.SensorId };
         const item = await docClientFunction(cfRoomSensorParams);
