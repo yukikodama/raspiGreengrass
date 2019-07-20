@@ -8,9 +8,8 @@ const docClientFunction = async(params, scan = false) => {
         if (scan) {
             docClient.scan(params, async(err, data) => {
                 resolve(await data.Items);
-        });
-        }
-        else {
+            });
+        } else {
             docClient.query(params, async(err, data) => {
                 resolve(await data.Items);
             });
@@ -25,9 +24,16 @@ const cfRoomSensorParams = {
         "#si": "SensorId"
     },
     ExpressionAttributeValues: {},
-    ScanIndexForward: false,
-    Limit: 60
+    ScanIndexForward: false
 };
+
+const getLimit = async (event) => {
+    if (event.queryStringParameters && event.queryStringParameters.limit && Number(event.queryStringParameters.limit) && 1<= Number(event.queryStringParameters.limit) && Number(event.queryStringParameters.limit) <= 60) {
+        return Number(event.queryStringParameters.limit);
+    } else {
+        return 60;
+    }
+}
 
 exports.handler = async (event, context, callback) => {
     const done = (err, res) => callback(null, {
@@ -38,6 +44,7 @@ exports.handler = async (event, context, callback) => {
     const s = await docClientFunction({ TableName: 'Sensor' }, true);
     console.info("s: ", s);
     var array = [];
+    cfRoomSensorParams.Limits = await getLimit(event);
     for (var i of s) {
         cfRoomSensorParams.ExpressionAttributeValues = { ":s": i.SensorId };
         const item = await docClientFunction(cfRoomSensorParams);
