@@ -8,9 +8,10 @@ const GrovePi = require('node-grovepi').GrovePi;
 const sensorId = require('proc-cpuinfo')()["Serial"][0];
 const createAt = new Date().getTime();
 
-
 const a0 = new GrovePi.sensors.base.Analog(0);
 const d2 = new GrovePi.sensors.DigitalInput(2);
+const d3 = new GrovePi.sensors.DigitalOutput(3);
+const d4 = new GrovePi.sensors.DigitalOutput(4);
 
 const publishCallback = async (err, data) => {
     console.error("publishCallback error: ", await err);
