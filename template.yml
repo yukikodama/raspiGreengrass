@@ -25,6 +25,21 @@ Globals:
       Role: !Ref CodeDeployRole
 
 Resources:
+  DynamoDBTableRequest:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: Request
+      BillingMode: PAY_PER_REQUEST
+      AttributeDefinitions:
+        -
+          AttributeName: RequestType
+          AttributeType: S
+      KeySchema:
+        -
+          AttributeName: RequestType
+          KeyType: HASH
+      StreamSpecification:
+        StreamViewType: NEW_IMAGE
   DynamoDBTableSensor:
     Type: AWS::DynamoDB::Table
     Properties:

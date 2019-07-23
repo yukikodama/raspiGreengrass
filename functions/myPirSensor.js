@@ -34,6 +34,7 @@ const intervalExecute = async () => {
     const light = Number(a0.read());
     const pir   = Number(d2.read());
     const updateAt = new Date().getTime();
+    const ttl = Math.floor(updateAt / 1000);
     const message = {SensorId: sensorId, UpdateAt: updateAt, During: 0, Light: light, Pir: pir, CreateAt: createAt};
     const putItem = {TableName: "PirSensor", Item: message};
     const pubOpt = {
