@@ -164,6 +164,11 @@ Resources:
           Properties:
             Path: /pir
             Method: get
+        PostEvent:
+          Type: Api
+          Properties:
+            Path: /pir
+            Method: post
 
   LambdaExecutionRole:
     Description: Creating service role in IAM for AWS Lambda
